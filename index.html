@@ -17,22 +17,6 @@
   <!-- Custom styles for this template -->
   <link href="css/small-business.css" rel="stylesheet">
 
-  <script>
-    (function(w,d,s,g,js,fs){
-      g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
-      js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
-      js.src='https://apis.google.com/js/platform.js';
-      fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
-    }(window,document,'script'));
-    </script>
-  <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M2LNV3M');</script>
-    <!-- End Google Tag Manager -->
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WJTKZP6G6"></script>
     <script>
@@ -55,10 +39,7 @@
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2LNV3M"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+
     <div id="chart-1-container"></div>
     <div id="chart-2-container"></div>
   <!-- Navigation -->
@@ -306,11 +287,6 @@
   </div>    
   
 </div>
-  <script>
-    $(document).ready(function(){
-        $('[data-toggle="popover"]').popover();
-    });
-    </script>
   <!-- /.container -->
 
   <!-- Footer -->
@@ -325,12 +301,22 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script>
+    (function(w,d,s,g,js,fs){
+      g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
+      js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
+      js.src='https://apis.google.com/js/platform.js';
+      fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
+    }(window,document,'script'));
+    </script>
+
+  <script>
 
     gapi.analytics.ready(function() {
     
       /**
        * Authorize the user with an access token obtained server side.
        */
+    
       gapi.analytics.auth.authorize({
         'serverAuth': {
           'access_token': 'ya29.c.KpwB8gcbqdhwXJigEfz2w-XC6qa7pLziuoNrZK_RRbC7lYDBbwpqaXH28s7kGwe64dQWwUDyTMbCIvtTcpJfVZLQujKgpcHswtHZ9g78uBSWlWO7clho7lJ9EpJHB81iOejKUwTRUtBuoq3VfK2JzceNQVN0FmcxA18bmLutAb62A8I-bvB5G-WbNO2kIAfZgLdYSwPO4pNtN0eaPCTL'
@@ -344,7 +330,7 @@
        */
       var dataChart1 = new gapi.analytics.googleCharts.DataChart({
         query: {
-          'ids': 'ga:100367422', // <-- Replace with the ids value for your view.
+          'ids': 'ga:237483641', // <-- Replace with the ids value for your view.
           'start-date': '30daysAgo',
           'end-date': 'yesterday',
           'metrics': 'ga:sessions,ga:users',
@@ -368,7 +354,7 @@
        */
       var dataChart2 = new gapi.analytics.googleCharts.DataChart({
         query: {
-          'ids': 'ga:100367422', // <-- Replace with the ids value for your view.
+          'ids': 'ga:237483641', // <-- Replace with the ids value for your view.
           'start-date': '30daysAgo',
           'end-date': 'yesterday',
           'metrics': 'ga:pageviews',
@@ -387,7 +373,9 @@
         }
       });
       dataChart2.execute();
+      
     
+      console.log("hi");
     });
     </script>
 
