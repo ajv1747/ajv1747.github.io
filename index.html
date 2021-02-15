@@ -374,45 +374,6 @@
       });
       dataChart2.execute();
       
-      function execute() {
-            return gapi.client.analyticsreporting.reports.batchGet({
-                "resource": {
-                    "reportRequests": [
-                    {
-                        "metrics": [
-                        {
-                            "alias": "User",
-                            "expression": "ga:1dayUsers",
-                            "formattingType": "INTEGER"
-                        },
-                        {
-                            "alias": "Site Speed",
-                            "expression": "ga:pageLoadTime",
-                            "formattingType": "INTEGER"
-                        }
-                        ],
-                        "dimensions": [
-                        {
-                            "histogramBuckets": [
-                            20210214
-                            ],
-                            "name": "ga:day"
-                        }
-                        ],
-                        "viewId": "237483641"
-                    }
-                    ],
-                    "useResourceQuotas": false
-                }
-            }).then(
-                function(response) {
-                // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-                },
-                function(err) { console.error("Execute error", err); }
-                );
-    
-            };
       console.log("hi");
     });
     </script>
