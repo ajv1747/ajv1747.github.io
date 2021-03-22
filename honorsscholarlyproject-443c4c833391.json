@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "honorsscholarlyproject",
+  "private_key_id": "443c4c833391eb35585dbae36f9cb8ef27166bc6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCLvLaYJm9Q1o7f\nGsvg/FHVGHav/j+aUq3YujpaAkF+C3jpaQAXGnqIb1dguTJYKDI1Z78laqcByhc1\nS1dAohNnfvb4DneCd5U0as+W8AkMm+S8cTAfHj7lmicGimRNTqM6UgAt8kQM57ZG\nv6m4ZmKOExrViEmjEb0KGJUGq+fbuL0LTeRH2qOBXsfUB3R4r5C9WZ9dAbbqJvPN\nARn+kBkWNTvAR2grILgr4wdIsythykWj9YmuupeWDtz0dJr4MbsNIeDTpeJCkT7o\n/gwHzIk/yOZyhjZ/Ym/GDcnCKpII/OzFr5jpalxkGSRn2hSrpy9M+W05MaCbeSFt\nVlwyApitAgMBAAECggEALXmssrdPYq9wr4q47u8ucnsTpRLJACAIE5AHjWNOjQaO\nwuc48EvdtKkHdqLOj4IFVPv+aN7cmuh5xQ5Pxuj4B6Z6GSAcJIlmNTjNdgGH8GKL\nfggX8QiWz4HrUWWYXtBIrqIhDNLa8pg16bBWO3yWdkYhZXyE+ly7eJ2nYhRv0EFD\npA0amOSCokjZN6HthIA82Ieg/RGGOzVqv6pTZ1eKCfpxPdtZLnMbfLUBCN3buU6T\n8fOWHYEefuXcRs3t+oBYvcOL4NIZ0st9TOkNOVlW9oLn5gHZIxsrVxcfD+aHmvQT\n9G2cB1/F4E3KgX92HyYZZ5y9X4okyzdR07kcdWBQwQKBgQDAtTxfYs2rwyFHWBey\ndt7wKBe9b+xdiKYQKG+MBYxhypkpylW1qXofz/ySLEIbVXgqpQazdEA0gsfYBWfi\nojyYHUnYrLzOOiA+qLxHQfMbR95kQMIxLFBVdUbcBrXGi7oMczztIPPjjojd5WrJ\nRNfzCHoz+YkmG4Xr2uJUkUf1vwKBgQC5obn2IY52OKEJaJkVFjLwj9OIYBcJuFyF\nSUjscLib0HP9T90QTOHRl23g4CbghrlEqfUT3N0lz9D3uPYxargGun/EHVUS0mmC\njP/3cdh3MEJ8U3L8n3RCCteQHt63HUn+wW7TF9Q5dRyIY/i1nu7SF60QMe63UI+S\nZAnTN4aEkwKBgFcXEQvCqVSAwR9vDnaXBjXeyKvSUy4KPZJ7072iHEltuD6MtKN+\nzjRmWKzu14lm3QHYxuh/Fy0kFZDpEIP58gyE4ATOPB2vYzcuJrjFc0rW9gi0w45Z\nioy0jauOVMRADXrm8ZfxFoe2uOAfeF0xga7SG/g1Q+g29BUdPMAfUDgdAoGAVT+5\nWBhnBVHSWrDHhJCSSjmy6nE+gz9AdhGGxNarYRsk+VMA8ahtGETTuC8Yi4ozcR4g\nJ8QJZ4D9tZYiseURqD1jyZuy4xbwT30TW/7Ta0Eld1UXfH559I5oGo6itzNjNPR+\nQcEyvERVGynWIQphIOiwmLxlpZgApzj77h0U0LMCgYBxjPOig6nHboXHaTGbAPV1\nJZhPSiFdn+RHiLqL0DlvyQtqiEwqzrHwuGqR1vtHzyTgcbAoQ25SHrOOGt84Izc3\n2U7SbkbXWLq6LxOaBavmaGTlt3sot7z0ZF+VcP6gaBmws7qIJaY7nsnkwqaIvdgy\nh5CoD4O1lE140RWHlXTz0A==\n-----END PRIVATE KEY-----\n",
+  "client_email": "builtinauth@honorsscholarlyproject.iam.gserviceaccount.com",
+  "client_id": "116528067345002214547",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/builtinauth%40honorsscholarlyproject.iam.gserviceaccount.com"
+}

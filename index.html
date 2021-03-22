@@ -35,20 +35,27 @@
 
     gtag('config', 'UA-189753115-1');
     </script>
-  <script type="application/javascript">
-    (function(b,o,n,g,s,r,c){if(b[s])return;b[s]={};b[s].scriptToken="XzE0MzYxMTA0MTM";b[s].callsQueue=[];b[s].api=function(){b[s].callsQueue.push(arguments);};r=o.createElement(n);c=o.getElementsByTagName(n)[0];r.async=1;r.src=g;r.id=s+n;c.parentNode.insertBefore(r,c);})(window,document,"script","https://cdn.oribi.io/XzE0MzYxMTA0MTM/oribi.js","ORIBI");
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+  <script>
+    $(document).ready(function(){
+      $(".show-modal").click(function(){
+        $("#AccountModal").modal({
+          backdrop: 'static',
+          keyboard: false});
+        });
+      })
   </script>
 </head>
 
 
 <body>
-
     <div id="chart-1-container"></div>
     <div id="chart-2-container"></div>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#head">Scholarly Project</a>
+      <a class="navbar-brand" href="#Welcome">Scholarly Project</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -83,233 +90,311 @@
       <div class="col pt-8 mt-20">
         <div class="row">
           <div>
-            <h5>lol</h5>
           </div>
         </div>
       </div>
       <div class="col-9">
   
-        <div class="container border">
-
+        <div class="container ">
+          <div class="row align-items-center my-5" id="Welcome">
+          <!-- /.col-lg-8 -->
+          <div class="col-lg-5">
+              <h1 class="font-weight-light">Welcome!</h1>
+              <p>
+                Hi! <a href="#AboutMe" >I’m Abbey</a>, a computer engineer at Purdue University. 
+                I am thrilled to share what I have learned and experienced in technology
+                 in relation to ethics. This website is highly interactive and will require 
+                 you to click around and engage with the content all over the page. I’ve tried 
+                 to include easter eggs and unexpected features to help you learn about technology 
+                 ethics conversation with tech itself! Dig in and feel free to 
+                 share any feedback or questions with me at this form <a href="">*insert form here*</a>. 
+                 I’d love to hear from you as I am also still learning and this tool will hopefully 
+                 grow with me as I learn.
+              </p>
+          </div>
+        </div>
+          <div class="row align-items-center my-5" id="EthicsEd">
+            <!-- /.col-lg-8 -->
+            <div class="col-lg-5">
+                <h1 class="font-weight-light">Ethics Education</h1>
+                <p>
+                  Currently there is a large gap in technology education when it comes to the 
+                  conversation of ethical design. For the last 30 years it has been known that technology 
+                  ethics are best taught by integrating them into current classes curriculum. While there 
+                  is research to support this idea, there is still a distinct lack of curricular 
+                  inclusion of these topics. As a computer engineering student I have yet to receive a 
+                  coding assignment that includes ethical considerations as a part of my coding assignment. 
+                  The only time I have learned about ethics was in a 0 credit hour seminar introducing us to 
+                  our major where we had 1 lesson that discussed ethics as an engineer. Here is the course description 
+                  where one learning outcome is 
+                  <a href="https://engineering.purdue.edu/ECE/Academics/Undergraduates/UGO/CourseInfo/courseInfo?courseid=32&show=true&type=undergrad">“an appreciation for ethical, professional and academic conduct.” </a>
+                  It is not surprising that there still exists a mindset of software engineers that ethical 
+                  considerations are simply not part of their job. I hope that this tool is an easy way to start thinking 
+                  about ethics and what should be considered when designing technology beyond what a powerpoint lecture could do. 
+                </p>
+            </div>
+          </div>
+          <div id = "registrationSection">
+            <p>
+              If you would like to learn more please register below...
+            </p>
+            <button onclick="hideFunction()" data-toggle="modal" data-target="#RegistrationModal">Register Here</button>
+          </div>
+          <!-- /.row -->
+          <div id="premiumContent" style="display: none">
+            
           <div class="row align-items-center my-5" id="DesignJustice">
           
               <!-- /.col-lg-8 -->
-              <div class="">
-            
+            <div class="">
+              
               <h1 class="font-weight-light">Justice Principals</h1>
-              <p>Below are 10 principals according to the Design Justice Network with some direct connections to topics discussed later.</p>
+              <p>
+                To begin my learning about design ethics I read about design justice. They are given below and I think 
+                are a great way to open up our thinking about tech design, beyond current practices in industry. These 
+                principals, created by the Design Justice Network, challenge many common practices and systems of oppression 
+                that industry reinforces. If you click on those principals I explained a quick example of current industry 
+                practices or linked to an external resource that relates to that principal in detail.
+              </p>
+              <br>
               <ul style="list-style-type:none;" class="mt-2">
-                  <li>
-                      <h4>Principal 1</h4>
+                  <li class="popup">
+                      <h4 onclick="showPrinciple(1)" href="">Principal 1</h4>
                       <p>We use design to sustain, heal, and empower our communities, as well as to seek liberation from exploitative and oppressive systems.</p>
-                  </li>
-                  <li>
-                      <h4>Principal 2</h4>
+                      <span class="popuptext" id="principle1">Example: Reinforcing the harms of the gender binary by forcing users to select from male or female when creating an account.</span>
+                    </li>
+                  <li class="popup">
+                      <h4 onclick="showPrinciple(2)">Principal 2</h4>
                       <p>We center the voices of those who are directly impacted by the outcomes of the design process.</p>
-                  </li>
-                  <li>
-                      <h4>Principal 3</h4>
+                      <span class="popuptext" id="principle2">Example: Only including the voices of technologists, company representatives, and paying customers in design meetings</span>
+                    </li>
+                  <li class="popup">
+                      <h4 onclick="showPrinciple(3)">Principal 3</h4>
                       <p>We prioritize design’s impact on the community over the intentions of the designer.</p>
-                  </li>
-                  <li>
-                      <h4>Principal 4</h4>
+                      <span class="popuptext" id="principle3"></span>
+                    </li>
+                  <li class="popup">
+                      <h4 onclick="showPrinciple(4)">Principal 4</h4>
                       <p>We view change as emergent from an accountable, accessible, and collaborative process, rather than as a point at the end of a process.</p>
-                  </li>
-                  <li>
-                      <h4>Principal 5</h4>
+                      <span class="popuptext" id="principle4">An example might be a large tech 
+                        <a href="https://www.cnn.com/2021/02/19/tech/google-ai-ethics-investigation/index.html">companies such as google</a> 
+                        developing new tools to become more “ethical” when the goal should be to change their design processes to be more inclusive and accountable from start to finish.</span>
+                    </li>
+                  <li class="popup">
+                      <h4 onclick="showPrinciple(5)">Principal 5</h4>
                       <p>We see the role of the designer as a facilitator rather than an expert.</p>
-                  </li>
-                  <li>
-                      <h4>Principal 6</h4>
+                      <span class="popuptext" id="principle5"></span>
+                    </li>
+                  <li class="popup">
+                      <h4 onclick="showPrinciple(6)">Principal 6</h4>
                       <p>We believe that everyone is an expert based on their own lived experience, and that we all have unique and brilliant contributions to bring to a design process.</p>
-                  </li>
-                  <li>
-                      <h4>Principal 7</h4>
+                      <span class="popuptext" id="principle6">This connects directly to meaningful diversity and inclusion which is discussed <a href="">here</a></span>
+                    </li>
+                  <li class="popup">
+                      <h4 onclick="showPrinciple(7)">Principal 7</h4>
                       <p>We share design knowledge and tools with our communities.</p>
-                  </li>
-                  <li>
-                      <h4>Principal 8</h4>
+                      <span class="popuptext" id="principle7">Sharing this information is critical to maintaining accountability and transparency. Anthony and Crawford also explain the pitfalls of transparency 
+                        <a href="https://journals.sagepub.com/doi/abs/10.1177/1461444816676645?journalCode=nmsa">here</a> 
+                        that will be explained later on this website.
+                      </span>
+                    </li>
+                  <li class="popup">
+                      <h4 onclick="showPrinciple(8)">Principal 8</h4>
                       <p>We work towards sustainable, community-led and -controlled outcomes.</p>
-                  </li>
-                  <li>
-                      <h4>Principal 9</h4>
+                      <span class="popuptext" id="principle8">A technology solution that is designed without the guidance of community members can lead to tools that are difficult to maintain without a technical 
+                        expert and unsustainable for the intended community.</span>
+                    </li>
+                  <li class="popup">
+                      <h4 onclick="showPrinciple(9)">Principal 9</h4>
                       <p>We work towards non-exploitative solutions that reconnect us to the earth and to each other.</p>
-                  </li>
-                  <li>
-                      <h4>Principal 10</h4>
+                      <span class="popuptext" id="principle9">Technology that profits off of highly-engaged polarized users, for example social media platforms, goes against this principle directly as it has a direct hand in 
+                        disconnecting ourselves from one another.</span>
+                    </li>
+                  <li class="popup">
+                      <h4 onclick="showPrinciple(10)">Principal 10</h4>
                       <p>Before seeking new design solutions, we look for what is already working at the community level. We honor and uplift traditional, indigenous, and local knowledge and practices</p>
-                  </li>
+                      <span class="popuptext" id="principle10">These researchers give several guiding principles on decolonizing AI design practices <a href="https://arxiv.org/abs/2007.04068">here</a>.</span>
+                    </li>
                 </ul>
               </div>
               <a class="btn btn-primary" href="https://designjustice.org/read-the-principles">Access their website</a>
               
             <!-- /.col-md-4 -->
-          </div>
-          <!-- /.row -->
-
-          <!-- I Row -->
-          <div class="row align-items-center my-5" id="EthicsEd">
-              <!-- /.col-lg-8 -->
-              <div class="col-lg-5">
-                  <h1 class="font-weight-light">Ethics Education</h1>
-                  <p>
-                      <i>(Here I will talk about the lack of ethics training for technologists and the motivation behind creating this website.)</i>
-                  </p>
-              </div>
-          </div>
-
-              
-          <!-- Call to Action Well -->
-
-        
-          <!-- Content Row -->
-          <div class="row">
-            <div class="col-lg-7">
+            </div>
+            <!-- Content Row -->
+            <div class="row">
+              <div class="col-lg-7">
+                <h1 class="font-weight-light">Meaningful Diversity and Inclusion</h1>
+                <p>Something is missing from the image below...</p>  
+                <div class="m-0 p-0 popup" >
+                  <img class="img-fluid rounded mb-0 mb-lg-0" onclick="showInclusion()" src="developers.jpg" alt="developers" data-toggle="tooltip" data-placement="top" title="Something is missing here...">
                   
-              <div class="popup m-0 p-0" onclick="myFunction()">
-                <img class="img-fluid rounded mb-4 mb-lg-0" src="developers.jpg" alt="developers"data-toggle="tooltip" data-placement="top" title="Something is missing here...">
-                <span class="popuptext" id="myPopup">Popup text...</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="row mb-5 mt-5" id="AIBiasCards">
-            <div class="col-md-4 mb-5">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h2 class="card-title">Automation of Welfare</h2>
-                  <p class="card-text">In Indiana, welfare services typically conducted by humans were automated by software. Can you think of how AI automating welfare could be used unethically?</p>
-                </div>
-                <div class="card-footer">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Question1Modal">
-                    Check Answer
-                  </button>
                 </div>
               </div>
             </div>
-                <!-- /.col-md-4 -->
-            <div class="col-md-4 mb-5">
-              <div class="card h-100">
-                <div class="card-body">
-                    <h2 class="card-title">Predictive Policing</h2>
-                    <p class="card-text">Predictive Policing uses data from previous criminal activity. This software tells the police where crime is "likely" to occur next. What issues do you think there are with designing a system this way?</p>
-                </div>
-                <div class="card-footer">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Question2Modal">
-                    Check Answer
-                  </button>
-                </div>
-              </div>
-            </div>
-                <!-- /.col-md-4 -->
-            <div class="col-md-4 mb-5">
-              <div class="card h-100">
-                <div class="card-body">
-                    <h2 class="card-title">Automating Bail</h2>
-                    <p class="card-text">There are some courts that have started using AI tools to determine if someone will receive bail. There are a couple of glaring ethical issues with using these tools.
-                        Can you think of how a system used to automate bail could further inequalities?</p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Question3Modal">
-                        Check Answer
-                    </button>
-                </div>
-              </div>
-            </div>
-            
-            </div>
-              <!-- /.col-md-4 -->
-          </div>
-            <!-- Transparency Row -->
-          <div class="row align-items-center my-5" id="Transparency">
-            <!-- /.col-lg-8 -->
-            <div class="col">
-              <h1 class="font-weight-light pb-2">Transparency and its Pitfalls</h1>
-              <p class="pb-4">
-                Explain how/why FAT is currently being used
-              </p>
-
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#TransparencyPopUp">
-                Click here to see what data has been collected!
-              </button>
-
-              <p class="pt-2">
-                Here are some examples of the pitfalls of transparency:
-              </p>
-            </div>
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-              </ol>
-              <div class="carousel-inner p-5" style="background:lightgrey;">
-                <div class="carousel-item active">
-                  <h5>Transparency can be harmful</h5>
-                  <p>
-                    While transparency can be a means of exposing the wrongdoings of companies, it can at times come at
-                     the cost of vulnerable groups who depend on privacy to protect “counter hegemonic ideas and strategies”.
-                     The comparison has been made between the modern transcripts and those those of the organizers of the underground
-                     railroad during US slavery. Revealing these through “radical transparency” would have similarly dramatic impacts
-                     on these vulnerable populations. 
-                  </p>
-                </div>
-                <div class="carousel-item">
-                  <h5>Transparency can reveal too much information to be easily understood</h5>
-                  <p>
-                    Transparency seems ideal if one assumes that they will only be given the information on importance, but this is not 
-                    always the case. Companies can use what is called resistant transparency to reveal a surplus of information to conceal 
-                    the actually important information. 
-                  </p>
-                </div>
-                <div class="carousel-item">
-                  <h5>Transparency suggests that seeing is more important than understanding</h5>
-                  <p>
-                    Like with the garbage data dump that you saw at the beginning of this section seeing what is being collected was likely 
-                    not that much insight into what this website had the potential to do with your data. In order for one to have a deep 
-                    understanding of a system and its effects it is necessary to physically interact with it and see how changes made on the 
-                    system change its outputs. Understanding how a system interacts with our data and its components is how a system can truly 
-                    be monitored and regulated. If we can only see the system and our data that deep understanding of the system will be missing.
-                  </p>
-                </div>
-                <div class="carousel-item">
-                  <h5>Transparency assumes a technical understanding and means of discussing what they are seeing</h5>
-                  <p>
-                    Just like when you were given the dump of raw data at the beginning of this section the only way you could have used this
-                     data was if you first had a base understanding of how digital data collection is constructed. Beyond this transparency
-                     is also only meaningful if you have a platform to discuss what you are seeing with other individuals. Systems that have
-                     both of these conditions are impossible to find. 
-                  </p>
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next p-0" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </div>
-          <div class="card text-white bg-secondary my-5 py-4 text-center" id="AboutMe">
-            <div class="card-body">
-                <h4>About Me</h4>
-                <p class="text-white m-0">Hi! I’m a current junior at Purdue University studying computer engineering. I am originally from a small town in Upstate New York. I am the director for outreach for Purdue’s branch of Society of Women Engineering. In this club I host events to encourage girls in 2nd - 12th grade to get excited about STEM related fields. I have a strong interest in ethical design, specifically with technology as a woman in engineering. I have had some experience in industry through a software engineering internship. I also have had exposure to the research side of tech and presented my research at the NSF conference for a secure and trustworthy cyberspace. Through all of these experiences and independent study of technology ethics I know that the technology field has quite a lot of work to do to become a space that empowers the communities that need us most instead of exploiting them. I feel in my formal course of study I haven’t been encouraged to learn about the social and ethical impacts of design, despite how critical education is to transforming the industry. I hope that this website gives some insight into what I have learned and help anyone interested in this field to learn more about the ethics of technology in an interactive and engaging way. 
+            <div class="row" id="inclusion"style="display: none">
+              <div class="col-lg-7">
+                <p>
+                  This too often is what my teams look like both professionally and accademically. 
+                  There is a dire need for increased diversity and inclusion in the tech sector. Often industry blames it on a "pipeline problem"
+                  claiming that people of color and women are discouraged from joining the industry. While there is merit to this clame with it can be 
+                  problamatic because it puts the <a href="https://ainowinstitute.org/discriminatingsystems.pdf">"onus to solve issues of discrimination in Silicon Valley on
+                    those who are discriminated against, rather than the perpetrators"</a>. 
+                  
+                The following are some recomendations from the same <a href="https://ainowinstitute.org/discriminatingsystems.pdf">article</a> for companies to address the diversity issue outside of looking to the "pipline problem"
+                <ul>
+                  <li>
+                    Publish compensation levels, including bonuses and equity, across all roles and job categories,
+broken down by race and gender
+                  </li>
+                  <li>Ensure executive incentive structures are tied to increases in hiring and retention of underrepresented groups.</li>
+                  <li>End pay and opportunity inequality, and set pay and benefit equity goals that include contract
+                    workers, temps, and vendors. </li>
+                </ul>
                 </p>
-                <img class="center p-4" src="Abbey.jpg" style="border-radius: 50%;" alt="picture of me"data-toggle="tooltip" data-placement="top" title="Facial Recognition Easter Egg" width="200" height="200">
-      
+              </div>
             </div>
-          </div> 
+
+            <div class="row mb-5 mt-5" id="AIBiasCards">
+              <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h2 class="card-title">Automation of Welfare</h2>
+                    <p class="card-text">In Indiana, welfare services typically conducted by humans were automated by software. Can you think of how AI automating welfare could be used unethically?</p>
+                  </div>
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Question1Modal">
+                      Check Answer
+                    </button>
+                  </div>
+                </div>
+              </div>
+                  <!-- /.col-md-4 -->
+              <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                  <div class="card-body">
+                      <h2 class="card-title">Predictive Policing</h2>
+                      <p class="card-text">Predictive Policing uses data from previous criminal activity. This software tells the police where crime is "likely" to occur next. What issues do you think there are with designing a system this way?</p>
+                  </div>
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Question2Modal">
+                      Check Answer
+                    </button>
+                  </div>
+                </div>
+              </div>
+                  <!-- /.col-md-4 -->
+              <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                  <div class="card-body">
+                      <h2 class="card-title">Automating Bail</h2>
+                      <p class="card-text">There are some courts that have started using AI tools to determine if someone will receive bail. There are a couple of glaring ethical issues with using these tools.
+                          Can you think of how a system used to automate bail could further inequalities?</p>
+                  </div>
+                  <div class="card-footer">
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Question3Modal">
+                          Check Answer
+                      </button>
+                  </div>
+                </div>
+              </div>
+              
+              </div>
+                <!-- /.col-md-4 -->
+              <!-- Transparency Row -->
+            <div class="row align-items-center my-5" id="Transparency">
+              <!-- /.col-lg-8 -->
+              <div class="col">
+                <h1 class="font-weight-light pb-2">Transparency and its Pitfalls</h1>
+                <p class="pb-4">
+                  Ethics in technology is not a new idea and origninally to address these concers some companies
+                  used fairness, accountability, and transparency values(sometimes called FAT for short). Using these
+                  values was a great start, but there are many pitfalls to coopting FAT as true eithical and inclusive design.
+                </p>
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#TransparencyPopUp">
+                  Click here to see what data has been collected!
+                </button>
+
+                <p class="pt-2">
+                  Here are some examples of the pitfalls of transparency:
+                </p>
+              </div>
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner p-5" style="background:lightgrey;">
+                  <div class="carousel-item active">
+                    <h5>Transparency can be harmful</h5>
+                    <p>
+                      While transparency can be a means of exposing the wrongdoings of companies, it can at times come at
+                      the cost of vulnerable groups who depend on privacy to protect “counter hegemonic ideas and strategies”.
+                      The comparison has been made between the modern transcripts and those those of the organizers of the underground
+                      railroad during US slavery. Revealing these through “radical transparency” would have similarly dramatic impacts
+                      on these vulnerable populations. 
+                    </p>
+                  </div>
+                  <div class="carousel-item">
+                    <h5>Transparency can reveal too much information to be easily understood</h5>
+                    <p>
+                      Transparency seems ideal if one assumes that they will only be given the information on importance, but this is not 
+                      always the case. Companies can use what is called resistant transparency to reveal a surplus of information to conceal 
+                      the actually important information. 
+                    </p>
+                  </div>
+                  <div class="carousel-item">
+                    <h5>Transparency suggests that seeing is more important than understanding</h5>
+                    <p>
+                      Like with the garbage data dump that you saw at the beginning of this section seeing what is being collected was likely 
+                      not that much insight into what this website had the potential to do with your data. In order for one to have a deep 
+                      understanding of a system and its effects it is necessary to physically interact with it and see how changes made on the 
+                      system change its outputs. Understanding how a system interacts with our data and its components is how a system can truly 
+                      be monitored and regulated. If we can only see the system and our data that deep understanding of the system will be missing.
+                    </p>
+                  </div>
+                  <div class="carousel-item">
+                    <h5>Transparency assumes a technical understanding and means of discussing what they are seeing</h5>
+                    <p>
+                      Just like when you were given the dump of raw data at the beginning of this section the only way you could have used this
+                      data was if you first had a base understanding of how digital data collection is constructed. Beyond this transparency
+                      is also only meaningful if you have a platform to discuss what you are seeing with other individuals. Systems that have
+                      both of these conditions are impossible to find. 
+                    </p>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next p-0" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+            <div class="card text-white bg-secondary my-5 py-4 text-center" id="AboutMe">
+              <div class="card-body">
+                  <h4>About Me</h4>
+                  <p class="text-white m-0">Hi! I’m a current junior at Purdue University studying computer engineering. I am originally from a small town in Upstate New York. I am the director for outreach for Purdue’s branch of Society of Women Engineering. In this club I host events to encourage girls in 2nd - 12th grade to get excited about STEM related fields. I have a strong interest in ethical design, specifically with technology as a woman in engineering. I have had some experience in industry through a software engineering internship. I also have had exposure to the research side of tech and presented my research at the NSF conference for a secure and trustworthy cyberspace. Through all of these experiences and independent study of technology ethics I know that the technology field has quite a lot of work to do to become a space that empowers the communities that need us most instead of exploiting them. I feel in my formal course of study I haven’t been encouraged to learn about the social and ethical impacts of design, despite how critical education is to transforming the industry. I hope that this website gives some insight into what I have learned and help anyone interested in this field to learn more about the ethics of technology in an interactive and engaging way. 
+                  </p>
+                  <img class="center p-4" src="Abbey.jpg" style="border-radius: 50%;" alt="picture of me"data-toggle="tooltip" data-placement="top" title="Facial Recognition Easter Egg" width="200" height="200">
+        
+              </div>
+            </div> 
         </div>
+      </div>
     <div class="col">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AccountModal">
-      Create an account with us!
-    </button>
+        Create an account with us!
+      </button>
     </div>
     </div>
-    <!-- Modal -->
+    <!-- Modals -->
       <div class="modal fade" id="Question1Modal" tabindex="-1" role="dialog" aria-labelledby="Question1ModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -377,27 +462,49 @@
           </div>
       </div>
 
-      <div class="modal fade" id="AccountResults" tabindex="-1" role="dialog" aria-labelledby="AccountResultsLabel" aria-hidden="true">
+      <div class="modal fade" id="AccountModalResults" tabindex="-1" role="dialog" aria-labelledby="AccountModalResultsLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="AccountResultsLabel">How Systems of Power are Integrated into Tech</h5>
+            <h5 class="modal-title" id="AccountModalResultsLabel">How Systems of Power are Integrated into Tech</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
             </div>
             <div class="modal-body">
-              While it might not be obious through this simple popup ... reinforcing the gender binary and can require use of deadname
-              </br>
-              Facebook realname policy example...
+              Tech is inherently designed with the dominant structures of power encode. Facebook’s real name policy excluded 
+              people without “traditionally European” names because their algorithms for recognizing 
+              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3189696">"were trained on real name datasets that over-represent European names”</a>. 
+            </br>
+            Additionally, the LGBTQ was harmed by this policy because it could in-andvertantly “out” a user who wished to keep
+             their real name off of social media to avoid “real-world consequences, from teasing, bullying, and emotional and physical 
+             violence from peers, to loss of family, a stable housing situation, access to resources for education, and so on.” Even a 
+             feature seemingly as small as a real name requirement can reproduce societal structures of oppression. 
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal"data-toggle="modal" data-target="#AccountModalResults2">Next</button>
             </div>
         </div>
         </div>
     </div>
-
+    <div class="modal fade" id="AccountModalResults2" tabindex="-1" role="dialog" aria-labelledby="AccountModalResultsLabel2" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="AccountModalResultsLabel2">How Systems of Power are Integrated into Tech</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+          <div class="modal-body">
+            Gender binary is another means of exclusion with a simple feature. This inadvertently targets the LGBTQ community by forcing users to adhere to a gender binary that is a spectrum that cannot be reduced to a single a or b selection.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+      </div>
+    </div>
       <div class="modal fade" id="AccountModal" tabindex="-1" role="dialog" aria-labelledby="AccountModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content p-2">
@@ -443,11 +550,12 @@
             </form>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal"data-toggle="modal" data-target="#AccountResults">Submit</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal"data-toggle="modal" data-target="#AccountModalResults">Submit</button>
             </div>
             </div>
         </div>
       </div>
+
       <div class="modal fade" id="TransparencyPopUp" tabindex="-1" role="dialog" aria-labelledby="TransparencyPopUpLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -460,7 +568,7 @@
               <div class="modal-body">
                 That was probably less useful than you thought it would be right? How much more do you really understand about
                  what this website is collecting? Transparency has become something of an ethics standard in the field, but it
-                 has quite a few limitations on governing algorithmic justice. 
+                 has quite a few limitations on governing algorithmic justice. See below, a few of the pitfalls below to learn more.
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -468,7 +576,28 @@
           </div>
         </div>
     </div>
-      <!-- /.row -->
+    <div class="modal fade" id="RegistrationModal" tabindex="-1" role="dialog" aria-labelledby="RegistrationLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="RegistrationLabel">Data Privacy Issue</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              This is problematic when it comes to services that are critical and necessary to use as it can for users to reveal 
+              their personal data unwillingly if there is no alternative. Particularly with people of color, where data collection 
+              has caused incredible harm with tools such as predictive policing and risk-based bail assessments, users should 
+              have the ability to use such tools without needing to reveal their personal data. 
+            </div>
+            <div class="modal-footer">
+              <button type="button" onclick=disableRegistration() class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
 
     
        
@@ -596,6 +725,34 @@
     function myFunction() {
       var popup = document.getElementById("myPopup");
       popup.classList.toggle("show");
+    }
+    function showPrinciple(num){
+      var popup = document.getElementById("principle"+num);
+      popup.classList.toggle("show");
+    }
+    function hideFunction() {
+      var x = document.getElementById("premiumContent");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function showInclusion() {
+      var x = document.getElementById("inclusion");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function disableRegistration() {
+      var x = document.getElementById("registrationSection");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
     }
   </script>
 </body>
